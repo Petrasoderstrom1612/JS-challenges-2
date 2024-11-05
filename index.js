@@ -76,3 +76,45 @@ const hint = playerGuess === correctAnswer ? 'Correct!' :
                 playerGuess > correctAnswer ? "too high" :
                 "too low"
 console.log(hint)
+
+/* ----------------------------------------------------------------- */
+
+//HACKER CODE innerHTML <button onclick="document.getElementById('film-list-app').innerHTML='<h1>Now I own your site 😭</h1>'">Click Me ☣️</button>
+
+const filmInput = document.getElementById('film-input')
+const addBtn = document.getElementById('add-btn')
+const filmList = document.getElementById('film-list')
+
+addBtn.addEventListener('click', function() {
+/*
+    filmList.innerHTML += `                                   this code can get hacked with the button above
+        <div class="film-item">${filmInput.value}</div>
+        `
+        filmInput.value = ''
+*/
+    const oneFilmItem = document.createElement("div") //create div
+    oneFilmItem.classList.add("film-item") //add class to it
+    oneFilmItem.textContent = filmInput.value //add value in between of the html tags
+    filmList.appendChild(oneFilmItem) //add the entire div to a dom as a child element so it interacts with the render
+    filmInput.value = '' //clear the input value field in dom
+}) 
+
+/* ----------------------------------------------------------------- */
+
+//FUNVTION DECLARATION
+
+console.log(getSpendAlert(200))
+
+function getSpendAlert(amount) {
+    return `Warning! You just spent £${amount}!`
+}
+
+/*------------------*/
+
+//FUNCTION EXPRESSION
+
+const getSpendAlert2 = function(amount){
+    return `Warning! You just spent £${amount}!`
+}
+
+console.log(getSpendAlert2(150))
