@@ -101,7 +101,7 @@ addBtn.addEventListener('click', function() {
 
 /* ----------------------------------------------------------------- */
 
-//FUNVTION DECLARATION
+//FUNVTION
 
 console.log(getSpendAlert(200))
 
