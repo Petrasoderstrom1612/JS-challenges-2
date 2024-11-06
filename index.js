@@ -118,3 +118,48 @@ const getSpendAlert2 = function(amount){
 }
 
 console.log(getSpendAlert2(150))
+
+//FUNCTION EXPRESSION - another example
+
+const getTheftAlert = function (numberOfTransactionsHour) {
+    if (numberOfTransactionsHour > 5) {
+        return `You have made ${numberOfTransactionsHour} transactions 
+                in the past hour. We think your card might have been 
+                compromised`
+    }
+}
+
+console.log(getTheftAlert(6))
+
+/* ----------------------------------------------------------------- */
+
+//OLDSTYLE FUNCTION
+function getSpendAlert(amount) {
+    return `Warning! You just spent £${amount}!`
+}
+
+console.log(getSpendAlert(100))
+
+//ARROW FUNCTION
+
+const getSpendAlert1 = amount => `Warning! You just spent £${amount}!` //If you have 1 argument, you do not need brackets. If you have one line of code, you can also skip return with {}
+
+console.log(getSpendAlert1(200))
+
+/*------------------*/
+//second example
+//OLDSTYLE FUNCTION
+const distanceTraveledMiles = [267, 345, 234, 190, 299]
+
+const distanceTraveledKm = distanceTraveledMiles.map(function(distance){
+    return Math.round(distance * 1.6)
+})
+
+console.log(distanceTraveledKm)
+
+//ARROW FUNCTION
+const distanceTraveledMiles1 = [267, 345, 234, 190, 299]
+
+const distanceTraveledKm1 = distanceTraveledMiles1.map(distance => Math.round(distance * 1.6)) //If you have 1 argument, you do not need brackets. If you have one line of code, you can also skip return with {}
+
+console.log(distanceTraveledKm1)
